@@ -1,70 +1,75 @@
 /* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
    Complete the below for code reviewers' convenience:
 
-   Code repository: _put repo URL here_
-   Web app: _put project's github pages URL here_
+   Code repository: https://github.com/f3d0t/f3d0t/tree/main/a_tiny_js_world_post_oop
+   Web app: https://f3d0t.github.io/f3d0t/a_tiny_js_world_post_oop/
    */
 
-// ======== OBJECTS DEFINITIONS ========
-// Define your objects here
-const dog = {
-	species: "dog",
-	name: "Toby",
-	gender: "male",
-	legs: 4,
-	hands: 0,
-	saying: "BaRk!!",
-};
-const cat = {
-	species: "cat",
-	name: "Tima",
-	gender: "male",
-	legs: 4,
-	hands: 0,
-	saying: "Meooow!!",
-};
-const woman = {
-	species: "human",
-	name: "Mella",
-	gender: "female",
-	legs: 2,
-	hands: 2,
-	saying: "Okay honey",
-};
-const man = {
-	species: "human",
-	name: "Antonio",
-	gender: "male",
-	legs: 2,
-	hands: 2,
-	saying: "Yabba dabba doo",
-};
-const catWoman = {
-	species: "catHuman",
-	name: "Selina",
-	gender: "female",
-	legs: 2,
-	hands: 2,
-	saying: cat.saying,
-};
+class Inhabitant {
+	constructor(name, species, gender, legs, saying) {
+		this.name = name;
+		this.species = species;
+		this.gender = gender;
+		this.legs = legs;
+		this.saying = saying;
+	}
+
+	toString() {
+		const templateArray = [
+			`HI! My name is ${this.name}.`, 
+			`I belong to the specie of ${this.species}.`, 
+			`My gender is ${this.gender}.`, 
+			`Saying: "${this.saying}".`, 
+			`I have ${this.legs} legs.`
+		];
+		return templateArray.join(" ");
+	}
+}
+
+class Dog extends Inhabitant {
+	constructor(name, gender) {
+		super(name, "dog", gender, 4, "BaRk!!");
+	}
+}
+
+class Cat extends Inhabitant {
+	constructor(name, gender) {
+		super(name, "cat", gender, 4, "Meooow!!");
+	}
+}
+
+class Human extends Inhabitant {
+	constructor(name, gender, saying) {
+		super(name, "Human", gender, 2, saying);
+		this.hands = 2;
+	}
+
+	toString() {
+		return super.toString() + ` I have ${this.hands} hands.`;
+	}
+}
+
+class CatHuman extends Cat {
+	constructor(name, gender) {
+		super(name, gender);
+		this.hands = 2;
+		this.legs = 2;
+		this.species = "Cathuman";
+	}
+
+	toString() {
+		return super.toString() + ` I have ${this.hands} hands.`;
+	}
+}
+
+const dog = new Dog("Reks", "male");
+const cat = new Cat("Tima", "male");
+const woman = new Human("Mella", "female", "Okay honey");
+const man = new Human("Andrew", "male", "I'm true Js master(joke)");
+const catWoman = new CatHuman("Selina", "female");
+
 const inhabitants = [dog, cat, man, woman, catWoman];
-// ======== OUTPUT ========
-/* Use print(message) for output.
-   Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
 
-   Message can contain HTML markup. You may also tweak index.html and/or styles.css.
-   However, please, REFRAIN from improving visuals at least until your code is reviewed
-   so code reviewers might focus on a single file that is index.js.
-   */
 inhabitants.forEach((being) => {
-	print([being.species, being.name, being.gender, being.legs, being.hands, being.saying].join("; ") + "\n");
+	print(being);
 });
-/* Print examples:
-   print('ABC');
-   print('<strong>ABC</strong>');
-   print('<strong>ABC</strong>', 'div');
-
-   print('human; John; male; 2; 2; Hello world!; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
-   */
