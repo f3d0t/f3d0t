@@ -58,7 +58,7 @@ const getPokemonContent = (id) => {
 		p.innerText = currentPokemon.description;
 		wrapper.append(h2, img, p);
 		return wrapper;
-	}
+	} else return false;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -72,8 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (target.nodeName === "LI" && oldId !== currentId) {
 			nav.querySelector(".active")?.classList.toggle("active");
 			target.classList.toggle("active");
-			main.innerHTML = "";
-			main.appendChild(getPokemonContent(currentId));
+			let newPokemon = getPokemonContent(currentId);
+			if (newPokemon) {
+				main.innerHTML = "";
+				main.appendChild(newPokemon);
+			}
 		}
 	});
 	document.getElementById("nav_switch").addEventListener("click", function () {
