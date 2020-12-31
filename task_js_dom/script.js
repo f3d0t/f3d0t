@@ -42,18 +42,18 @@ const createMenuList = (arrayOfPokemons, container) => {
 	container.appendChild(wrapper);
 };
 
-const createPokemonContent = (item) => {
+const createPokemonContent = (pokemon) => {
 	const wrapper = document.createElement("div");
 	const h2 = document.createElement("h2");
 	h2.classList.add("main__name");
-	h2.innerText = item.name;
+	h2.innerText = pokemon.name;
 	const img = document.createElement("img");
 	img.classList.add("main__img");
-	img.src = item.imagePath;
-	img.alt = item.name;
+	img.src = pokemon.imagePath;
+	img.alt = pokemon.name;
 	const p = document.createElement("p");
 	p.classList.add("main__text");
-	p.innerText = item.description;
+	p.innerText = pokemon.description;
 	wrapper.append(h2, img, p);
 	return wrapper;
 };
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (target.nodeName === "LI" && oldId !== currentId) {
 			nav.querySelector(".active")?.classList.toggle("active");
 			target.classList.toggle("active");
-			let newPokemon = pokemons.find((item) => item.id == currentId);
+			const newPokemon = pokemons.find((item) => item.id == currentId);
 			if (newPokemon) {
 				main.innerHTML = "";
 				main.appendChild(createPokemonContent(newPokemon));
