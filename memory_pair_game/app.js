@@ -54,9 +54,9 @@ const getCardHTML = (cardObject) => {
 };
 
 const getAllCardsHTML = () => {
-	const containerFragment= document.createDocumentFragment();
+	const containerFragment = document.createDocumentFragment();
 	const cardsShuffledArray = shuffleArray([...CARDS_ARRAY, ...CARDS_ARRAY]);
-	cardsShuffledArray.forEach((card) => containerFragment.append(getCardHTML(card)));
+	cardsShuffledArray.forEach((arrayItem) => containerFragment.append(getCardHTML(arrayItem)));
 	return containerFragment;
 };
 
