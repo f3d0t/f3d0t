@@ -34,8 +34,8 @@ const CARDS_ARRAY = [
 ];
 const CARDS_CONTAINER = document.getElementById("cards_container");
 const TURN_DELAY = 970;
-const openedNow = [];
-let openedPairsCount = 0;
+const openedNow = [];//will contain array of Dom objects, implemented to avoid bugs on checking
+let solvedPairsCount = 0;
 let startTime = Date.now();
 
 const shuffleArray = (array) => array.sort(() => 0.5 - Math.random());
@@ -67,7 +67,7 @@ const checkPair = (twoCardsArray) => {
 				card.classList.add("solved");
 			}, TURN_DELAY);
 		});
-		openedPairsCount++;
+		solvedPairsCount++;
 	}
 	twoCardsArray.forEach((card) => {
 		setTimeout(() => {
@@ -77,7 +77,7 @@ const checkPair = (twoCardsArray) => {
 };
 
 const startGame = () => {
-	openedPairsCount = 0;
+	solvedPairsCount = 0;
 	CARDS_CONTAINER.innerHTML = "";
 	CARDS_CONTAINER.append(getAllCardsHTML());
 	startTime = Date.now();
@@ -93,7 +93,7 @@ const initGame = () => {
 			if (openedNow.length == 2) {
 				checkPair(openedNow);
 				openedNow.splice(0, 2);
-				if (openedPairsCount == 8) {
+				if (solvedPairsCount == 8) {
 					alert("You win!!!\nYour time is " + Math.floor((Date.now() - startTime) / 1000) + " seconds");
 					setTimeout(startGame(), 2000);
 				}
