@@ -53,13 +53,11 @@ const getCardHTML = (cardObject) => {
 	return card;
 };
 
-const getAllCardsHTML = (cardsArray) => {
-	const container = document.createDocumentFragment();
-	const cardsShuffledArray = shuffleArray([...cardsArray, ...cardsArray]);
-	for (let i = 0; i < 16; i++) {
-		container.append(getCardHTML(cardsShuffledArray[i]));
-	}
-	return container;
+const getAllCardsHTML = () => {
+	const containerFragment= document.createDocumentFragment();
+	const cardsShuffledArray = shuffleArray([...CARDS_ARRAY, ...CARDS_ARRAY]);
+	cardsShuffledArray.forEach((card) => containerFragment.append(getCardHTML(card)));
+	return containerFragment;
 };
 
 const checkPair = (twoCardsArray) => {
@@ -81,8 +79,8 @@ const checkPair = (twoCardsArray) => {
 const startGame = () => {
 	openedPairsCount = 0;
 	CARDS_CONTAINER.innerHTML = "";
-	CARDS_CONTAINER.append(getAllCardsHTML(CARDS_ARRAY));
-    startTime = Date.now();
+	CARDS_CONTAINER.append(getAllCardsHTML());
+	startTime = Date.now();
 };
 
 const initGame = () => {
@@ -96,7 +94,7 @@ const initGame = () => {
 				checkPair(openedNow);
 				openedNow.splice(0, 2);
 				if (openedPairsCount == 8) {
-                    alert("You win!!!\nYour time is " + Math.floor((Date.now() - startTime) / 1000) + " seconds");
+					alert("You win!!!\nYour time is " + Math.floor((Date.now() - startTime) / 1000) + " seconds");
 					setTimeout(startGame(), 2000);
 				}
 			}
