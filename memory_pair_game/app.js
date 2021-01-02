@@ -34,7 +34,7 @@ const CARDS_ARRAY = [
 ];
 const CARDS_CONTAINER = document.getElementById("cards_container");
 const TURN_DELAY = 970;
-const openedNow = [];//will contain array of Dom objects, implemented to avoid bugs on checking
+const openedNow = []; //will contain array of Dom objects, implemented to avoid bugs on checking
 let solvedPairsCount = 0;
 let startTime = Date.now();
 
