@@ -118,7 +118,7 @@ body{
     cursor: initial;
 } 
 .card.solved{
-	transform: rotateY(0deg);
+	transform: rotateY(0deg), scale(1.2);
     cursor: initial;
     opacity: 0;
 }
