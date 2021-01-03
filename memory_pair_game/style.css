@@ -155,7 +155,7 @@ body{
 		display: none;
 	}
 	main{
-		height: 100%;
+		height: calc(100vh - 120px);
 	}
 	.cards_container{
 		width: 100%;
