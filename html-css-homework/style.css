@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background-color: #222;
+    color: #ddd;
+    font-family: 'Hind', sans-serif;
+}
+
+.header{
+    padding: 20px 40px;
+    border-bottom: 1px solid #000;
+}
+.header_menu{
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+}
+.header_menu__item{
+    margin-left: 10px;
+}
+.header_menu__item:first-child{
+    margin-left: 0px;
+}
+
+.main{
+    padding: 20px 40px;
+}
+.main_breadcrumbs{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+.main_breadcrumbs__item{
+    margin: 0 6px;
+}
+.main_breadcrumbs__item:first-child{
+    margin-left: 0px;
+}
+
+.movie{
+
+}
+.movie__title{
+    margin-top: 20px;
+}
+.movie_time{
+
+}

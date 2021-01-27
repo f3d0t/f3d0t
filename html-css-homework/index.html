@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fight Club | Movie ticket booking</title>
+        <meta name="description" content="Here you can book Fight Club movie tickets">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="header">
+            <nav>
+                <ul class="header_menu">
+                    <li class="header_menu__item"><a href="#">Main</a></li>
+                    <li class="header_menu__item"><a href="#">Ongoing</a></li>
+                    <li class="header_menu__item header_menu__item--active"><a href="#">Booking</a></li>
+                    <li class="header_menu__item"><a href="#">Bestsellers</a></li>
+                    <li class="header_menu__item"><a href="#">Film rating</a></li>
+                </ul>
+            </nav>
+		</header>
+		<main class="main" id="main">
+            <nav>
+                <ol class="main_breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="main_breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a itemscope itemtype="https://schema.org/WebPage"
+                        itemprop="item" itemid="https://example.com/cinema/"
+                        href="https://example.com/cinema/">
+                          <span itemprop="name">Cinema</span></a>
+                      <meta itemprop="position" content="1" />
+                    </li>
+                    ›
+                    <li class="main_breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                      <a itemscope itemtype="https://schema.org/WebPage"
+                         itemprop="item" itemid="https://example.com/cinema/booking"
+                         href="https://example.com/books/sciencefiction">
+                        <span itemprop="name">Booking</span></a>
+                      <meta itemprop="position" content="2" />
+                    </li>
+                    ›
+                    <li class="main_breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                      <span itemprop="name">Fight Club</span>
+                      <meta itemprop="position" content="3" />
+                    </li>
+                  </ol>
+            </nav>
+            <article class="movie"> 
+                <h1 class="movie__title">Fight club tickets booking</h1>
+                <h2 class="movie__time">Session time&date: 22.02.21 13-45</h2>
+            </article>
+            <div id="cards_container" class="cards_container">
+            </div>
+        </main>
+        <footer>
+            <address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <span><i class="icofont icofont-social-google-map"></i>Cinema address:</span>
+                <strong itemprop="streetAddress">
+                  <a href="https://goo.gl/maps/RmDcsY9GNsBvV5Zf7">50142, Italy, Via Annibal Caro, 71-1, Firenze FI</a>
+                </strong>
+              </address>
+        </footer>
+	</body>
+</html>
