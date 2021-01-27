@@ -1,50 +1,80 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
+* {
+	box-sizing: border-box;
+	margin: 0;
 }
-body{
-    background-color: #222;
-    color: #ddd;
-    font-family: 'Hind', sans-serif;
+:root{
+	font-size: 14px;
 }
-
-.header{
-    padding: 20px 40px;
-    border-bottom: 1px solid #000;
-}
-.header_menu{
-    display: flex;
-    padding: 0;
-    list-style-type: none;
-}
-.header_menu__item{
-    margin-left: 10px;
-}
-.header_menu__item:first-child{
-    margin-left: 0px;
+body {
+	background-color: #222;
+	color: #ddd;
+	font-family: "Hind", sans-serif;
 }
 
-.main{
-    padding: 20px 40px;
+.header {
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	border-bottom: 1px solid #000;
 }
-.main_breadcrumbs{
-    display: flex;
-    list-style-type: none;
-    padding: 0;
+.header_logo {
+	background: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><foreignObject width=%22100px%22 height=%22100px%22><div xmlns=%22http://www.w3.org/1999/xhtml%22 style=%22font-size:70px%22>🎞️</div></foreignObject></svg>");
+	background-size: 40px 40px;
+	width: 40px;
+	height: 44px;
+	margin-right: 1rem;
 }
-.main_breadcrumbs__item{
-    margin: 0 6px;
+.header_menu {
+	display: flex;
+	padding: 0;
+	list-style-type: none;
 }
-.main_breadcrumbs__item:first-child{
-    margin-left: 0px;
+.header_menu__item {
+	margin-left: 0.8rem;
+}
+.header_menu__item:first-child {
+	margin-left: 0px;
+}
+.header_menu__item a {
+	color: #eee;
+	text-decoration: none;
+}
+.header_menu__item a:hover {
+	text-decoration: underline;
 }
 
-.movie{
-
+.main {
+	padding: 1rem 2rem;
 }
-.movie__title{
-    margin-top: 20px;
+.main_breadcrumbs {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
 }
-.movie_time{
+.main_breadcrumbs__item {
+	margin: 0 0.5rem;
+}
+.main_breadcrumbs__item:first-child {
+	margin-left: 0px;
+}
+.main_breadcrumbs__item a {
+	color: #eee;
+	text-decoration: none;
+}
+.main_breadcrumbs__item a:hover {
+	text-decoration: underline;
+}
 
+.movie {
+}
+.movie__title {
+	margin-top: 1.5rem;
+    font-size: 2rem;
+}
+.movie__time {
+    font-size: 1em;
+}
+
+.footer {
+	padding: 1rem 2rem;
 }
