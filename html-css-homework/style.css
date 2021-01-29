@@ -68,7 +68,7 @@ body {
 .movie {
 }
 .movie__title {
-	margin-top: 1.5rem;
+	margin-top: 0.5rem;
     font-size: 2rem;
 }
 .movie__time {
