@@ -25,7 +25,7 @@
 		</header>
 		<main class="main" id="main">
 			<nav>
-				<ul class="main_breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<ul class="main_breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
 					<li class="main_breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 						<a
 							itemscope
@@ -58,16 +58,16 @@
 					</li>
 				</ul>
 			</nav>
-			<section class="movie">
-				<section class="movie__info">
+			<article class="movie">
+				<div class="movie__info">
 					<h1 class="movie__title">"Fight club" movie tickets booking</h1>
 					<h2 class="movie__time">Session time & date: <time datetime="2021-02-14 13:45">14.02.21 / 13:45</time></h2>
 					<p class="movie__rating">IMDB rating: <span>8.8 / 10</span></p>
 					<p class="movie__language">Language: <span>English</span></p>
 					<p class="movie__format">Film format: <span>2D</span></p>
-				</section>
+				</div>
 				<form action="#" class="form__booking">
-					<div class="seats_booking">
+					<fieldset class="seats_booking">
 						<label class="form__seat form__seat--placeholder"></label>
 						<input id="1-1" type="checkbox" class="visually-hidden form__seat_input" data-seat="1" data-row="1" value="1-1" />
 						<label class="form__seat" for="1-1"></label>
@@ -170,15 +170,15 @@
 						<label class="form__seat" for="5-10"></label>
 						<input id="5-11" type="checkbox" class="visually-hidden form__seat_input" data-seat="11" data-row="5" value="5-11" />
 						<label class="form__seat" for="5-11"></label>
-          </div>
+          </fieldset>
           <button class="form__button" type="button">Proceed</button>
-          <div class="seats_labels">
-						<label class="form__seat form__seat--taken" for="0-0"></label><span class="seats_labels__span">Taken</span>
-						<label class="form__seat" for="0-0"></label><span class="seats_labels__span">Available</span>
-						<label class="form__seat form__seat--selected" for="0-0"></label><span class="seats_labels__span">Selected</span>
-          </div>
+          <fieldset class="seats_labels">
+						<label class="form__seat form__seat--taken"></label><span class="seats_labels__span">Taken</span>
+						<label class="form__seat"></label><span class="seats_labels__span">Available</span>
+						<label class="form__seat form__seat--selected"></label><span class="seats_labels__span">Selected</span>
+          </fieldset>
 				</form>
-			</section>
+			</article>
 		</main>
 		<footer class="footer">
 			<address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
