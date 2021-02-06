@@ -67,7 +67,7 @@
 					<p class="movie__format">Film format: <span>2D</span></p>
 				</section>
 				<form action="#" class="form__booking">
-					<fieldset class="seats_booking">
+					<div class="seats_booking">
 						<label class="form__seat form__seat--placeholder"></label>
 						<input id="1-1" type="checkbox" class="visually-hidden form__seat_input" data-seat="1" data-row="1" value="1-1" />
 						<label class="form__seat" for="1-1"></label>
@@ -170,8 +170,13 @@
 						<label class="form__seat" for="5-10"></label>
 						<input id="5-11" type="checkbox" class="visually-hidden form__seat_input" data-seat="11" data-row="5" value="5-11" />
 						<label class="form__seat" for="5-11"></label>
-					</fieldset>
-					<button class="form__button" type="button">Proceed</button>
+          </div>
+          <button class="form__button" type="button">Proceed</button>
+          <div class="seats_labels">
+						<label class="form__seat form__seat--taken" for="0-0"></label><span class="seats_labels__span">Taken</span>
+						<label class="form__seat" for="0-0"></label><span class="seats_labels__span">Available</span>
+						<label class="form__seat form__seat--selected" for="0-0"></label><span class="seats_labels__span">Selected</span>
+          </div>
 				</form>
 			</section>
 		</main>
@@ -179,7 +184,7 @@
 			<address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
 				<span>Cinema address:</span>
 				<strong>
-					<a href="https://goo.gl/maps/RmDcsY9GNsBvV5Zf7" target="_blank" itemprop="streetAddress"
+					<a href="https://goo.gl/maps/RmDcsY9GNsBvV5Zf7" target="_blank" itemprop="streetAddress" class="footer__link"
 						>50142, Italy, Via Annibal Caro, 71-1, Firenze FI</a
 					>
 				</strong>

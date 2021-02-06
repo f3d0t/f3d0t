@@ -102,9 +102,10 @@ body {
 	grid-area: formArea;
 	width: 360px;
 	display: flex;
-    flex-direction: row;
+    flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 	max-width: 500px;
 }
 .seats_booking {
@@ -132,17 +133,12 @@ body {
 	border-top-style: solid;
 	filter: drop-shadow(0px 3px 10px #fff);
 }
-.form__seat {
-	height: 26px;
-	width: 26px;
-}
 .form__seat:before {
 	content: attr(for);
-	margin: 2px;
 	height: 26px;
 	width: 26px;
 	border-radius: 3px;
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #ddd;
@@ -155,16 +151,17 @@ body {
 	content: "";
 	background-color: transparent;
 	box-shadow: 0px 0px 0px #fff;
+	cursor: unset;
 }
 .form__seat_input:hover + .form__seat:before,
 .form__seat_input:focus + .form__seat:before {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 4px #fff;
 }
-.form__seat_input:checked + .form__seat:before {
+.form__seat_input:checked + .form__seat:before, .form__seat--selected:before{
 	background-color: rgb(240, 150, 150);
 }
-.form__seat_input:disabled + .form__seat:before {
+.form__seat_input:disabled + .form__seat:before, .form__seat--taken:before{
 	cursor: unset;
 	background-color: #777;
 	box-shadow: 0px 0px 0px #fff;
@@ -175,11 +172,27 @@ body {
 	border-radius: 2px;
 	transition: all 150ms linear;
 	background-color: #ddd;
+	border-style: solid;
+	border-color: transparent;
 }
 .form__button:hover, .form__button:focus {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 4px #fff;
 	border: 2px solid white; 
+}
+.seats_labels{
+	margin: 15px auto 0 auto;
+	text-align: center;
+	line-height: 30px;
+}
+.seats_labels .form__seat:before{
+	cursor: unset;
+}
+.seats_labels__span{
+	margin: 0px .9rem 0px .3rem;
+}
+.seats_labels__span:last-child{
+	margin: 0px 0px 0px .3rem;
 }
 
 .footer {
@@ -187,6 +200,12 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+}
+.footer__link{
+	color: #aaa;
+}
+.footer__link:hover{
+	color: #fff;
 }
 
 @media (max-width:730px){
