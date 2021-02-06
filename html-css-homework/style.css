@@ -175,6 +175,7 @@ body {
 	box-shadow: 0px 0px 0px #fff;
 	border-radius: 2px;
 	transition: all 150ms linear;
+	background-color: #ddd;
 }
 .form__button:hover, .form__button:focus {
 	background-color: rgb(255, 255, 255);
@@ -190,6 +191,9 @@ body {
 }
 
 @media (max-width:730px){
+	:root {
+		font-size: 12px;
+	}
 	.movie{
 		margin-top: 1rem;
 		text-align: center;
@@ -198,6 +202,9 @@ body {
 		grid-template-areas: 
 		"textArea"
 		"formArea";
+	}
+	.movie__info {
+		padding-right: 0px;
 	}
 	.form__booking {
 		justify-self: center;
