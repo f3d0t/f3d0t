@@ -83,7 +83,6 @@ body {
 	grid-template-rows: 100%;
 	grid-template-columns: 50% 50%;
 	grid-template-areas: "textArea  formArea";
-	column-gap: 40px;
 }
 .movie__title {
 	margin-top: 1rem;
@@ -96,14 +95,16 @@ body {
 .movie__info{
 	grid-area: textArea;
 	align-items: center;
+	padding-right: 40px;
 }
 
 .form__booking {
 	grid-area: formArea;
 	width: 360px;
 	display: flex;
-    flex-direction: column;
+    flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 	max-width: 500px;
 }
 .seats_booking {
@@ -166,17 +167,19 @@ body {
 }
 .form__seat_input:disabled + .form__seat:before {
 	cursor: unset;
-	background-color: #999;
+	background-color: #777;
 	box-shadow: 0px 0px 0px #fff;
 }
 .form__button{
 	width: 100px;
-	align-self: center;
 	box-shadow: 0px 0px 0px #fff;
+	border-radius: 2px;
+	transition: all 150ms linear;
 }
 .form__button:hover, .form__button:focus {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 4px #fff;
+	border: 2px solid white; 
 }
 
 .footer {
@@ -184,4 +187,19 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+}
+
+@media (max-width:730px){
+	.movie{
+		margin-top: 1rem;
+		text-align: center;
+		grid-template-rows: 50% 50%;
+		grid-template-columns: 100%;
+		grid-template-areas: 
+		"textArea"
+		"formArea";
+	}
+	.form__booking {
+		justify-self: center;
+	}
 }
