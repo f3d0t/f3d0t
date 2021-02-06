@@ -125,7 +125,6 @@ body {
 	left: -15px;
 	display: block;
 	width: 360px;
-	grid-column: span 3;
 	height: 2rem;
 	border-top-width: 2px;
 	border-radius: 50%;
@@ -197,7 +196,7 @@ body {
 	.movie{
 		margin-top: 1rem;
 		text-align: center;
-		grid-template-rows: 50% 50%;
+		grid-template-rows: auto auto;
 		grid-template-columns: 100%;
 		grid-template-areas: 
 		"textArea"
