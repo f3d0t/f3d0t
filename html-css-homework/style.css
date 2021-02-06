@@ -208,4 +208,7 @@ body {
 	.form__booking {
 		justify-self: center;
 	}
+	.footer {
+		position: relative;
+	}
 }
